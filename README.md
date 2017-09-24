@@ -67,11 +67,15 @@ error response:
 ### 安装步骤
 1. git clone git@github.com:xiaotui/user-account.git
 2. cd user-account
-3. 根据./user-account/src/main/schema.sql准备好mysql环境；
-4. 修改./user-account/src/main/resources/application.yaml里面的mysql连接字符串；（本地mysql不能用localhost，需要用internal ip才能被docker里面的进程访问到） 
+3. 根据src/main/schema.sql准备好mysql环境；
+4. 修改src/main/resources/application.yaml里面的mysql连接字符串；（本地mysql不能用localhost，需要用internal ip才能被docker里面的进程访问到） 
 5. 回到user-account目录下，执行 sh user-account.sh start；
 6. 使用 sh user-account.sh stop|restart|status 等命令可以管理该帐号服务。
 
 
 ## 代码测试覆盖率报告
-## /user-account/code-coverage/index.html
+### code-coverage.zip
+
+
+## 单元/集成测试代码
+### src/main/test
