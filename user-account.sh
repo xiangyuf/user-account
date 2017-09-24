@@ -4,10 +4,10 @@ PID=$(docker ps | grep user-account | awk '{ print $1 }')
 
 case $1 in
     "start")
-        mvn clean package
-        docker build --rm -t user-account .
         if [ -z "$PID" ]
         then
+            mvn clean package
+            docker build --rm -t user-account .
             docker rm user-account
             docker run -d -p 8080:8080 -p 8081:8081 --name=user-account user-account java -jar user-account-1.0-SNAPSHOT.jar
         fi
