@@ -1,12 +1,12 @@
-#User Account Service
+# User Account Service
 
-###使用Sping Boot开发的一个简单的用户账户服务，可以对用户的账户信息进行基本的管理
+### 使用Sping Boot开发的一个简单的用户账户服务，可以对用户的账户信息进行基本的管理
 
-##API:
+## API:
 
-API相关服务部署在host:8080，8081端口为ops端口, 访问http://host:8081/ops/jstack可以返回当前java进程的jstack
+API相关服务部署在host:8080，8081端口为ops端口, 访问 http://host:8081/ops/jstack 可以返回当前java进程的jstack
 
-###创建账户: 
+### 创建账户: 
 	POST /user/add?user_id={user_id}&coins={coin_number}
 	
 	user_id：非负整数，required；
@@ -23,7 +23,7 @@ error response:
 	{"message":"Params should be greater than or equal to 0.","data":""}  //参数不规范
 
 	
-###获取用户账户余额: 	
+### 获取用户账户余额: 	
 	GET /user/coins/{user_id}
 	
 	user_id：非负整数，required；
@@ -36,7 +36,7 @@ error response:
 	{"message":"Params should be greater than or equal to 0.","data":""}  //参数不规范
 	{"message":"Invalid user id. Can't find this user by id.","data":""}  //找不到用户id		
 
-###用户之间转账: 	
+### 用户之间转账: 	
 	POST /user/transaction/transfer??from_user_id={user_id1}&to_user_id={user_id2}&coins={coin_number}
 	
 	user_id1：非负整数，required；
@@ -55,16 +55,16 @@ error response:
 
 
 
-##服务部署步骤
+## 服务部署步骤
 
-###依赖服务
-**JDK8, Maven, Docker, Mysql**
+### 依赖服务
+** JDK8, Maven, Docker, Mysql **
 
 	默认Mysql跑在localhost:3306端口，用户名root，密码root；
 	Docker需要可以成功执行docker pull relateiq/oracle-java8;
 	
 
-###安装步骤
+### 安装步骤
 1. git clone git@github.com:xiaotui/user-account.git
 2. cd user-account
 3. 根据./user-account/src/main/schema.sql准备好mysql环境；
@@ -73,5 +73,5 @@ error response:
 6. 使用 sh user-account.sh stop|restart|status 等命令可以管理该帐号服务。
 
 
-##代码测试覆盖率报告
-##/user-account/code-coverage/index.html
+## 代码测试覆盖率报告
+## /user-account/code-coverage/index.html
