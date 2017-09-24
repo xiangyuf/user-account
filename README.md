@@ -61,6 +61,11 @@ error response:
 **JDK8, Maven, Docker, Mysql**
 
 	默认Mysql跑在localhost:3306端口，用户名root，密码root；
+	
+	Mysql最好允许远程访问的权限：
+	GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+ 	FLUSH PRIVILEGES;
+	
 	Docker需要可以成功执行docker pull relateiq/oracle-java8;
 	
 
