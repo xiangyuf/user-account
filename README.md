@@ -58,7 +58,7 @@ error response:
 ## 服务部署步骤
 
 ### 依赖服务
-** JDK8, Maven, Docker, Mysql **
+**JDK8, Maven, Docker, Mysql**
 
 	默认Mysql跑在localhost:3306端口，用户名root，密码root；
 	Docker需要可以成功执行docker pull relateiq/oracle-java8;
